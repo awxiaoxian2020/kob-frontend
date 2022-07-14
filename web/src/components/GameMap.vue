@@ -14,7 +14,7 @@ export default {
     let parent = ref(null);
     let canvas = ref(null);
     onMounted(()=>{
-      new GameMapUtil(canvas.value.getContext("2d"),parent.value)
+      new GameMapUtil(canvas.value.getContext("2d"),parent.value);
     })
     return {
       parent,canvas
