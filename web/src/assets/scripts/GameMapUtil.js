@@ -28,7 +28,20 @@ export class GameMapUtil extends ACGameObject {
         for (let c = 0; c < this.cols; c++) {
             g[0][c]=g[this.rows-1][c]= true;
         }
-
+        for (let i =0;i<this.inner_walls_count/2;i++){
+            for (let j =0;j<1000;j++){
+                let r = parseInt(Math.random()*this.rows);
+                let c = parseInt(Math.random()*this.cols);
+                if (g[r][c] || g[c][r]){
+                    continue;
+                }
+                if (r===this.rows-2&&c===1 ||c===this.cols-2&&r===1){
+                    continue;
+                }
+                g[r][c]=g[c][r]=true;
+                break;
+            }
+        }
         for (let r = 0; r < this.rows; r++) {
             for (let c = 0; c < this.cols; c++) {
                 if (g[r][c]){
