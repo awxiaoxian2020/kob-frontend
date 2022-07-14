@@ -1,6 +1,6 @@
 <template>
   <div>
-    record
+    排行榜
   </div>
 </template>
 

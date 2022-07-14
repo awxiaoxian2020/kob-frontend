@@ -1,6 +1,6 @@
 <template>
   <div>
-    排行榜
+    对局列表
   </div>
 </template>
 
