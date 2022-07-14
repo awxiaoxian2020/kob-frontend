@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <content-field>
     对局列表
-  </div>
+  </content-field>
 </template>
 
 <script>
-export default {
+import ContentField from "@/components/ContentField";
 
+export default {
+  components: {
+    ContentField
+  }
 }
 </script>
 
