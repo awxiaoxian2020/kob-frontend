@@ -1,15 +1,13 @@
 <template>
-  <content-field>
-    对战
-  </content-field>
+<play-ground></play-ground>
 </template>
 
 <script>
-import ContentField from "@/components/ContentField";
+import PlayGround from "@/components/PlayGround";
 
 export default {
   components: {
-    ContentField
+    PlayGround
   }
 }
 </script>
