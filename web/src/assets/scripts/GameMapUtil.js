@@ -1,4 +1,5 @@
 import {ACGameObject} from "@/assets/scripts/ACGameObject";
+import {WallUtil} from "@/assets/scripts/WallUtil";
 
 export class GameMapUtil extends ACGameObject {
     constructor(ctx, parent) {
@@ -6,13 +7,40 @@ export class GameMapUtil extends ACGameObject {
         this.ctx = ctx;
         this.parent = parent;
         this.L = 0;
-
+        this.inner_walls_count=20;
         this.rows = 13;
         this.cols = 13;
 
+        this.walls=[];
+
+    }
+    create_walls(){
+        const g =[];
+        for (let r = 0; r < this.rows; r++) {
+            g[r]=[];
+            for (let c = 0; c < this.cols; c++) {
+                g[r][c]=false;
+            }
+        }
+        for (let r = 0; r < this.rows; r++) {
+            g[r][0]=g[r][this.cols-1]=true;
+        }
+        for (let c = 0; c < this.cols; c++) {
+            g[0][c]=g[this.rows-1][c]= true;
+        }
+
+        for (let r = 0; r < this.rows; r++) {
+            for (let c = 0; c < this.cols; c++) {
+                if (g[r][c]){
+                    this.walls.push(new WallUtil(r,c,this));
+
+                }
+            }
+        }
     }
 
     start() {
+        this.create_walls();
     }
 
     update_size() {
