@@ -1,5 +1,6 @@
 <template>
   <NavBar/>
+  <router-view></router-view>
 </template>
 <script>
 import NavBar from './components/NavBar.vue'
@@ -17,7 +18,7 @@ export default {
 </script>
 <style>
 body {
-  background-image: url(./assets/background.png);
+  background-image: url(./assets/images/background.png);
   /* 背景图垂直、水平均居中 */
   background-position: center center;
   /* 背景图不平铺 */
