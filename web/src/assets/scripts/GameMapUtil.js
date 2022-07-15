@@ -47,13 +47,13 @@ export class GameMapUtil extends ACGameObject {
             for (let j =0;j<1000;j++){
                 let r = parseInt((Math.random()*this.rows).toString());
                 let c = parseInt((Math.random()*this.cols).toString());
-                if (g[r][c] || g[c][r]){
+                if (g[r][c] || g[this.rows-1-r][this.cols-1-c]){
                     continue;
                 }
                 if (r===this.rows-2&&c===1 ||c===this.cols-2&&r===1){
                     continue;
                 }
-                g[r][c]=g[c][r]=true;
+                g[r][c]=g[this.rows-1-r][this.cols-1-c]=true;
                 break;
             }
         }
