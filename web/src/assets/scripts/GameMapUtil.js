@@ -45,8 +45,8 @@ export class GameMapUtil extends ACGameObject {
         }
         for (let i =0;i<this.inner_walls_count/2;i++){
             for (let j =0;j<1000;j++){
-                let r = parseInt(Math.random()*this.rows);
-                let c = parseInt(Math.random()*this.cols);
+                let r = parseInt((Math.random()*this.rows).toString());
+                let c = parseInt((Math.random()*this.cols).toString());
                 if (g[r][c] || g[c][r]){
                     continue;
                 }
