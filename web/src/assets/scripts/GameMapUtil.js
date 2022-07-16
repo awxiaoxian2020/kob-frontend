@@ -81,7 +81,7 @@ export class GameMapUtil extends ACGameObject {
     }
 
     update_size() {
-        this.L = Math.min(this.parent.clientWidth / this.cols, this.parent.clientHeight / this.rows);
+        this.L = parseInt(Math.min(this.parent.clientWidth / this.cols, this.parent.clientHeight / this.rows).toString());
         this.ctx.canvas.width = this.L * this.cols;
         this.ctx.canvas.height = this.L * this.rows;
     }
